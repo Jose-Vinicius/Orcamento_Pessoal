@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador financeiro</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body onload="carregarDespesas()">
+    <header>
+        <img src="../IMG/sifrao.png" alt="sifrao">
+        <a href="../index.html">
+            <p id="criar">Adicionar</p>
+        </a>
+        <p id="consulta" class="selecionado">Consultar</p>
+    </header>
+
+    <div id="modal">
+        <header class="cabecalho">
+            <h2 id="tituloModal"></h2>
+            <img src="../IMG/mais.png" alt="Fechar" id="fechar">
+        </header>
+        <section class="texto_modal"><p id="textoModal"></p></section>
+    </div>
+
+    <section>
+        <h1>Consultar Despesas</h1>
+
+        <div>
+            <input type="number" name="dia" id="dia" min="1" max="31" placeholder="DIA">
+
+            <select name="mes" id="mes">
+                <option value="">MÊS</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="Maio">maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+            </select>
+
+            <input type="number" name="ano" id="ano" min="2000" max="2100" placeholder="ANO">
+            
+            <select name="tipo" id="tipo" required>
+                <option value="">tipo da despesa</option>
+                <option value="educacao">Educação</option>
+                <option value="lazer">Lazer</option>
+                <option value="mercado">Mercado</option>
+                <option value="investimentos">Investimentos</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <input type="text" name="descricao" id="descricao" placeholder="Descrição">
+
+            <input type="number" name="valor" id="valor" placeholder="Valor"> 
+
+            <button id="pesquisar" onclick="pesquisarDespesa()"><img src="../IMG/lupa.png" alt="Adicionar"></button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="despesasListadas">
+                
+            </tbody>
+        </table>
+        
+
+    </section>
+<script src="../JS/script.js"></script>
+</body>
+</html>
